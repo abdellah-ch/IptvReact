@@ -1,5 +1,3 @@
-
-import { Card, CardContent } from "@/components/ui/card"
 import {
     Carousel,
     CarouselContent,
@@ -7,6 +5,7 @@ import {
 } from "@/components/ui/carousel"
 import Autoplay from "embla-carousel-autoplay"
 const Landing = () => {
+    let movies = ["/images/movie1.webp","/images/movie2.webp","/images/movie3.webp","/images/movie4.webp","/images/movie5.webp","/images/movie6.webp","/images/movie7.webp"]
     return (
         <div className="z-0 ">
             <div className="bg-hero-pg bg-center lg:bg-cover bg-no-repeat w-screen h-[70vh] lg:h-[90vh] z-0">
@@ -20,20 +19,16 @@ const Landing = () => {
                     }}
                     plugins={[
                         Autoplay({
-                            delay: 1000,
+                            delay: 2000,
                         }),
                     ]}
-                    className="w-[80vw] mx-auto "
+                    className="w-[100vw]"
                 >
-                    <CarouselContent>
-                        {Array.from({ length: 10 }).map((_, index) => (
-                            <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
-                                <div className="p-1">
-                                    <Card>
-                                        <CardContent className="flex aspect-square items-center justify-center p-6">
-                                            <img src="/images/movie1.webp" alt="" />
-                                        </CardContent>
-                                    </Card>
+                    <CarouselContent className="">
+                        {movies.map((image, index) => (
+                            <CarouselItem key={index} className="basis-1/2 md:basis-1/3 lg:basis-1/6 rounded-lg">
+                                <div className="">
+                                            <img src={image}  alt="" />
                                 </div>
                             </CarouselItem>
                         ))}

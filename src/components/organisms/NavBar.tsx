@@ -20,7 +20,7 @@ const NavBar = () => {
 
     return (
         <div className="bg-black sticky top-0 z-10" >
-            <div className="flex justify-between  h-[87px] sticky top-0 bg-black max-w-[91%] lg:flex lg:max-w-[90%] lg:m-auto lg:items-center lg:justify-around">
+            <div className="flex justify-between  h-[80px] sticky top-0 bg-black max-w-[91%] lg:flex lg:max-w-[90%] lg:m-auto lg:items-center lg:justify-around">
                 <img src={logo} alt="" width={200} className="cursor-pointer m-4 lg:m-0" />
                 <div
                     className="fixed right-9 top-9 cursor-pointer lg:hidden"
