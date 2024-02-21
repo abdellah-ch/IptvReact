@@ -23,7 +23,7 @@ const NavBar = () => {
             <div className="flex justify-between  h-[80px] sticky top-0 bg-black max-w-[91%] lg:flex lg:max-w-[90%] lg:m-auto lg:items-center lg:justify-around">
                 <img src={logo} alt="" width={200} className="cursor-pointer m-4 lg:m-0" />
                 <div
-                    className="fixed right-9 top-9 cursor-pointer lg:hidden"
+                    className="fixed right-9 top-8 cursor-pointer lg:hidden"
                     onClick={OpenCloseNav}
                 >
                     <img src={open} alt="" />
@@ -75,7 +75,7 @@ const NavBar = () => {
                 {/* Mobile Nab */}
 
                 <div className="hidden md:flex md:mt-auto md:mb-auto md:cursor-pointeri md:w-[150px] h-[45px] ">
-                    <Button className="font-bold purchaseButton w-full h-full">PURCHASE</Button>
+                    <Button className="font-bold purchaseButton w-full h-full">Free Trial</Button>
                 </div>
             </div>
         </div>

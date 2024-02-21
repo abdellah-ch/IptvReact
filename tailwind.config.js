@@ -17,6 +17,10 @@ module.exports = {
             },
         },
         extend: {
+            fontFamily: {
+                Roboto: ["Roboto-Bold", "sans-serif"],
+                // Add more custom font families as needed
+            },
             colors: {
                 border: "hsl(var(--border))",
                 input: "hsl(var(--input))",
