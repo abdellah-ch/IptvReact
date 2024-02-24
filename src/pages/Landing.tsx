@@ -5,34 +5,11 @@ import {
     CarouselItem,
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
-import { PayPalButtons, usePayPalScriptReducer } from "@paypal/react-paypal-js";
+import { NavLink } from "react-router-dom";
+
 
 const Landing = () => {
 
-    //const [{ options, isPending }, dispatch] = usePayPalScriptReducer();
-
-
-    const onCreateOrder = (data, actions) => {
-        return actions.order.create({
-            purchase_units: [
-                {
-                    amount: {
-                        value: "8.99",
-                    },
-                },
-            ],
-        });
-    }
-    const onApproveOrder = (data, actions) => {
-        return actions.order.capture().then((details) => {
-            const name = details.payer.name.given_name;
-            alert(`Transaction completed by ${name}`);
-        });
-    }
-
-    const handlePaymentPaypale = async () => {
-        console.log("payment in process");
-    }
 
     const movies = [
         "/images/movie1.webp",
@@ -60,9 +37,9 @@ const Landing = () => {
                         of Channels and On-Demand Content
                     </p>
                     <Button
-                        onClick={handlePaymentPaypale}
-                        className="font-bold purchaseButton w-[220px] lg:w-[270px] lg:h-[50px] h-[40px]">
-                        PURCHASE
+                        className="font-bold purchaseButton w-[220px] lg:w-[270px] lg:h-[50px] h-[40px]"
+                    >
+                        <NavLink className="w-full" to="/checkout">PURCHASE</NavLink>
                     </Button>
                 </div>
             </div>
@@ -116,7 +93,7 @@ const Landing = () => {
                                         id="product1"
                                         className="text-lg font-semibold leading-8 text-white"
                                     >
-                                        Product Type 1
+                                        1 Month
                                     </h2>
                                 </div>
                                 <p className="mt-4 text-sm leading-6 text-gray-300">
@@ -124,24 +101,16 @@ const Landing = () => {
                                 </p>
                                 <p className="mt-6 flex items-baseline gap-x-1">
                                     <span className="text-4xl font-bold tracking-tight text-white">
-                                        € 10 / unit
+                                        € 12.99
                                     </span>
                                     <span className="text-sm font-semibold leading-6 text-gray-300"></span>
                                 </p>
-                                {/* <a
-                                    href="#"
-                                    onClick={handlePaymentPaypale}
-                                    aria-describedby="product1"
-                                    className="bg-white/10 text-white hover:bg-white/20 focus-visible:outline-white mt-6 block rounded-md py-2 px-3 text-center text-sm font-semibold leading-6 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
-                                >
+                                <NavLink to="/checkout" aria-describedby="product1"
+                                    className="bg-white/10 text-white hover:bg-white/20 focus-visible:outline-white mt-6 block rounded-md py-2 px-3 text-center text-sm font-semibold leading-6 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2">
                                     Order Now
-                                </a> */}
-                                <PayPalButtons
-                                    className="mt-6"
-                                    style={{ layout: "vertical" }}
-                                    createOrder={(data, actions) => onCreateOrder(data, actions)}
-                                    onApprove={(data, actions) => onApproveOrder(data, actions)}
-                                />
+                                </NavLink>
+
+
                                 <ul
                                     role="list"
                                     className="mt-8 space-y-3 text-sm leading-6 text-gray-300 xl:mt-10"
@@ -160,7 +129,7 @@ const Landing = () => {
                                                 clipRule="evenodd"
                                             ></path>
                                         </svg>
-                                        40 units
+                                        +12000 Live channels
                                     </li>
                                     <li className="flex gap-x-3">
                                         <svg
@@ -176,7 +145,7 @@ const Landing = () => {
                                                 clipRule="evenodd"
                                             ></path>
                                         </svg>
-                                        1 feature
+                                        Quality (HD / UHD/4K)
                                     </li>
                                     <li className="flex gap-x-3">
                                         <svg
@@ -192,7 +161,7 @@ const Landing = () => {
                                                 clipRule="evenodd"
                                             ></path>
                                         </svg>
-                                        Fast delivery
+                                        7/d money back guarantee
                                     </li>
                                 </ul>
                             </div>
@@ -203,7 +172,7 @@ const Landing = () => {
                                         id="product2"
                                         className="text-lg font-semibold leading-8 text-white"
                                     >
-                                        Product Type 2
+                                        6 Months
                                     </h2>
                                     <p className="rounded-full bg-primary px-2.5 py-1 text-xs font-semibold leading-5 text-white">
                                         Most popular
@@ -214,24 +183,17 @@ const Landing = () => {
                                 </p>
                                 <p className="mt-6 flex items-baseline gap-x-1">
                                     <span className="text-4xl font-bold tracking-tight text-white">
-                                        € 20 / unit
+                                        € 36.99
                                     </span>
                                     <span className="text-sm font-semibold leading-6 text-gray-300"></span>
                                 </p>
-                                {/* <a
-                                    href="#"
-                                    aria-describedby="product2"
+                                <NavLink to="/checkout" aria-describedby="product1"
+
                                     className="bg-primary text-white shadow-sm hover:bg-red focus-visible:outline-indigo-500 mt-6 block rounded-md py-2 px-3 text-center text-sm font-semibold leading-6 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
-                                    onClick={handlePaymentPaypale}
                                 >
                                     Order Now
-                                </a> */}
-                                <PayPalButtons
-                                    className="mt-6"
-                                    style={{ layout: "vertical" }}
-                                    createOrder={(data, actions) => onCreateOrder(data, actions)}
-                                    onApprove={(data, actions) => onApproveOrder(data, actions)}
-                                />
+                                </NavLink>
+
                                 <ul
                                     role="list"
                                     className="mt-8 space-y-3 text-sm leading-6 text-gray-300 xl:mt-10"
@@ -250,7 +212,7 @@ const Landing = () => {
                                                 clipRule="evenodd"
                                             ></path>
                                         </svg>
-                                        120 units
+                                        +12000 Live channels
                                     </li>
                                     <li className="flex gap-x-3">
                                         <svg
@@ -266,7 +228,7 @@ const Landing = () => {
                                                 clipRule="evenodd"
                                             ></path>
                                         </svg>
-                                        3 different features
+                                        Quality (HD / UHD/4K)s
                                     </li>
                                     <li className="flex gap-x-3">
                                         <svg
@@ -282,7 +244,7 @@ const Landing = () => {
                                                 clipRule="evenodd"
                                             ></path>
                                         </svg>
-                                        Fast delivery
+                                        7/d money back guarantee
                                     </li>
                                 </ul>
                             </div>
@@ -293,7 +255,7 @@ const Landing = () => {
                                         id="product3"
                                         className="text-lg font-semibold leading-8 text-white"
                                     >
-                                        Product Type 3
+                                        12 Months
                                     </h2>
                                 </div>
                                 <p className="mt-4 text-sm leading-6 text-gray-300">
@@ -301,24 +263,22 @@ const Landing = () => {
                                 </p>
                                 <p className="mt-6 flex items-baseline gap-x-1">
                                     <span className="text-4xl font-bold tracking-tight text-white">
-                                        € 50 / unit
+                                        € 80
                                     </span>
                                     <span className="text-sm font-semibold leading-6 text-gray-300"></span>
                                 </p>
+                                <NavLink to="/checkout" aria-describedby="product1"
+                                    className="bg-white/10 text-white hover:bg-white/20 focus-visible:outline-white mt-6 block rounded-md py-2 px-3 text-center text-sm font-semibold leading-6 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2">
+                                    Order Now
+                                </NavLink>
                                 {/* <a
                                     href="#"
-                                    onClick={handlePaymentPaypale}
                                     aria-describedby="product3"
                                     className="bg-white/10 text-white hover:bg-white/20 focus-visible:outline-white mt-6 block rounded-md py-2 px-3 text-center text-sm font-semibold leading-6 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
                                 >
                                     Order Now
                                 </a> */}
-                                <PayPalButtons
-                                    className="mt-6"
-                                    style={{ layout: "vertical" }}
-                                    createOrder={(data, actions) => onCreateOrder(data, actions)}
-                                    onApprove={(data, actions) => onApproveOrder(data, actions)}
-                                />
+
                                 <ul
                                     role="list"
                                     className="mt-8 space-y-3 text-sm leading-6 text-gray-300 xl:mt-10"
@@ -337,7 +297,7 @@ const Landing = () => {
                                                 clipRule="evenodd"
                                             ></path>
                                         </svg>
-                                        240 units
+                                        +12000 Live channels;
                                     </li>
                                     <li className="flex gap-x-3">
                                         <svg
@@ -353,7 +313,7 @@ const Landing = () => {
                                                 clipRule="evenodd"
                                             ></path>
                                         </svg>
-                                        6 different features
+                                        Quality (HD / UHD/4K)s
                                     </li>
                                     <li className="flex gap-x-3">
                                         <svg
@@ -369,7 +329,7 @@ const Landing = () => {
                                                 clipRule="evenodd"
                                             ></path>
                                         </svg>
-                                        Fast delivery
+                                        7/d money back guarantee
                                     </li>
                                 </ul>
                             </div>
