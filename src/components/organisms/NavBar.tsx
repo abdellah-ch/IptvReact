@@ -3,6 +3,7 @@ import { IoMdClose } from "react-icons/io";
 import logo from "/images/logo.png";
 import open from "../ui/openNav.svg";
 import { useEffect, useState } from "react";
+import { NavLink } from "react-router-dom";
 const NavBar = () => {
     const [isOpen, setIsopen] = useState<boolean>(false);
     useEffect(() => {
@@ -19,9 +20,11 @@ const NavBar = () => {
     };
 
     return (
-        <div className="bg-black  z-10" >
-            <div className="flex justify-between  h-[80px] sticky top-0 bg-black max-w-[91%] lg:flex lg:max-w-[90%] lg:m-auto lg:items-center lg:justify-around">
-                <img src={logo} alt="" width={200} className="cursor-pointer m-4 lg:m-0" />
+        <div className="bg-black sticky top-0 lg:relative lg:top-auto z-10" >
+            <div className="flex justify-between  h-[80px] sticky top-0 lg:relative lg:top-auto  bg-black max-w-[91%] lg:flex lg:max-w-[90%] lg:m-auto lg:items-center lg:justify-around">
+                <NavLink to="/">
+                    <img src={logo} alt="" width={200} className="cursor-pointer m-4 lg:m-0" />
+                </NavLink>
                 <div
                     className="fixed right-9 top-8 cursor-pointer lg:hidden"
                     onClick={OpenCloseNav}
@@ -32,16 +35,17 @@ const NavBar = () => {
                 {/* Desktop links */}
                 <div className="hidden lg:flex lg:flex-row lg:justify-center lg:items-center  gap-16 mr-[50px] mt-2">
                     <div className="py-5  hover:text-primary hover:border-b-[3px]  hover:border-b-primary  transition-all duration-300 ease-in-out text-[1em] font-semibold tracking-wide cursor-pointer">
-                        <a href="#" >Home</a>
+                        <NavLink to="/" >Home</NavLink >
                     </div>
                     <div className="py-5  hover:text-primary hover:border-b-[3px]  hover:border-b-primary  transition-all duration-300 ease-in-out text-[1em] font-semibold tracking-wide cursor-pointer">
-                        <a href="#" >Pricing</a>
+
+                        <a href="/#pr">Pricing</a >
                     </div>
                     <div className="py-5  hover:text-primary hover:border-b-[3px]  hover:border-b-primary  transition-all duration-300 ease-in-out text-[1em] font-semibold tracking-wide cursor-pointer">
-                        <a href="#">Support & FAQ</a>
+                        <NavLink to="">Support & FAQ</NavLink >
                     </div>
                     <div className="py-5  hover:text-primary hover:border-b-[3px]  hover:border-b-primary  transition-all duration-300 ease-in-out text-[1em] font-semibold tracking-wide cursor-pointer">
-                        <a href="#" >Tutorial</a>
+                        <NavLink to="/TutorialIptv" >Tutorial</NavLink >
                     </div>
                 </div>
                 {/* Desktop links */}
@@ -59,16 +63,16 @@ const NavBar = () => {
                     </div>
                     <div className="flex flex-col justify-center items-start w-[90%] m-auto gap-3 mt-4">
                         <div className="p-5">
-                            <a href="#">Home</a>
+                            <NavLink to="/">Home</NavLink >
                         </div>
                         <div className="p-5">
-                            <a href="#">Pricing</a>
+                            <a href="#pr">Pricing</a >
                         </div>
                         <div className="p-5">
-                            <a href="#">Support & FAQ</a>
+                            <NavLink to="">Support & FAQ</NavLink >
                         </div>
                         <div className="p-5">
-                            <a href="#">Tutorial</a>
+                            <NavLink to="/TutorialIptv">Tutorial</NavLink >
                         </div>
                     </div>
                 </div>

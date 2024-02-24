@@ -3,6 +3,7 @@ import Tutorial from "@/pages/Tutorial";
 import Layout from "@/components/template/Layout";
 import Pricing from "@/pages/Pricing";
 import Landing from "@/pages/Landing";
+import Checkout from "@/pages/Checkout";
 const routes: RouteObject[] = [
     {
         path: "/",
@@ -20,6 +21,10 @@ const routes: RouteObject[] = [
                 path: "/TutorialIptv",
                 element: <Tutorial />,
             },
+            {
+                path: "/checkout",
+                element: <Checkout />
+            }
         ]
     },
 ]

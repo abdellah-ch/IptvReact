@@ -208,7 +208,35 @@ body{
 }
 
 
-/*Pricing css*/
 
 
-/*Pricing css*/
+/*Sliding css*/
+.slider-container {
+  width: 100%;
+  overflow: hidden;
+}
+
+.slider {
+  width: 200%; /* Make it twice the width of the container to accommodate all images */
+  animation: slide 15s linear infinite; /* Adjust the duration as needed */
+}
+
+.images {
+  display: flex;
+}
+
+.image {
+  width: 20%; /* Adjust the width of each image */
+  height: 100px; /* Adjust the height of each image */
+}
+
+@keyframes slide {
+
+    0% {
+    transform: translateX(-50%);
+  }
+  200% {
+    transform: translateX(100%);
+  }
+}
+/*Sliding css*/

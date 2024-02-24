@@ -7,9 +7,19 @@ import {
 import Autoplay from "embla-carousel-autoplay";
 import { NavLink } from "react-router-dom";
 
-
 const Landing = () => {
-
+    const brands = [
+        "/images/brand1.webp",
+        "/images/brand2.webp",
+        "/images/brand3.webp",
+        "/images/brand4.webp",
+        "/images/brand5.webp",
+        "/images/brand6.webp",
+        "/images/brand7.webp",
+        "/images/brand8.webp",
+        "/images/brand9.webp",
+        "/images/brand10.webp"
+    ];
 
     const movies = [
         "/images/movie1.webp",
@@ -21,7 +31,7 @@ const Landing = () => {
         "/images/movie7.webp",
     ];
     return (
-        <div className="z-0   flex flex-col  w-screen items-center text-center">
+        <div className="z-0   flex flex-col  w-screen items-center text-center overflow-hidden">
             <i className="test w-auto lg:w-auto lg:mt-20 font-semibold text-xl text-white mt-5 pb-3  border-b-2 border-primary ">
                 The International IPTV Service{" "}
             </i>
@@ -36,10 +46,10 @@ const Landing = () => {
                         Stream Your Favorites Anytime, Anywhere with Our Premium Selection
                         of Channels and On-Demand Content
                     </p>
-                    <Button
-                        className="font-bold purchaseButton w-[220px] lg:w-[270px] lg:h-[50px] h-[40px]"
-                    >
-                        <NavLink className="w-full" to="/checkout">PURCHASE</NavLink>
+                    <Button className="font-bold purchaseButton w-[220px] lg:w-[270px] lg:h-[50px] h-[40px]">
+                        <NavLink className="w-full" to="/checkout">
+                            PURCHASE
+                        </NavLink>
                     </Button>
                 </div>
             </div>
@@ -50,7 +60,16 @@ const Landing = () => {
                 </h1>
             </div>
 
-            <div className="w-screen  my-9 z-0">
+            <div className="w-[80%] lg:w-[65%] flex flex-col items-center my-9 z-0">
+                <div className="slider-container w-full ">
+                    <div className="slider w-full relative">
+                        <div className="images w-full">
+                            {brands.map((brand) => (
+                                <div className="w-[40%] lg:w-[20%] h-[100px]"><img src={brand} alt="" /></div>
+                            ))}
+                        </div>
+                    </div>
+                </div>
                 <Carousel
                     opts={{
                         align: "start",
@@ -60,13 +79,12 @@ const Landing = () => {
                             delay: 2000,
                         }),
                     ]}
-                    className="w-[100vw]"
                 >
                     <CarouselContent className="">
                         {movies.map((image, index) => (
                             <CarouselItem
                                 key={index}
-                                className="basis-1/2 md:basis-1/3 lg:basis-1/6 rounded-lg"
+                                className="basis-1/2 md:basis-1/3 lg:basis-1/5 rounded-lg"
                             >
                                 <div className="">
                                     <img src={image} alt="" />
@@ -78,10 +96,10 @@ const Landing = () => {
             </div>
 
             <div>
-                <div className="pt-5 bg-black" id="pricing">
+                <div className="pt-5 bg-black" id="pr">
                     <div className="mx-auto pb-20 mt-4 max-w-7xl px-6 lg:px-8">
                         <div className="mx-auto max-w-4xl text-center mb-16">
-                            <p className="mt-2 text-4xl font-bold tracking-tight text-white sm:text-5xl">
+                            <p className="mt-2 text-3xl lg:text-4xl font-bold tracking-tight text-white sm:text-5xl">
                                 Stream, Watch, Enjoy
                             </p>
                         </div>
@@ -105,11 +123,13 @@ const Landing = () => {
                                     </span>
                                     <span className="text-sm font-semibold leading-6 text-gray-300"></span>
                                 </p>
-                                <NavLink to="/checkout" aria-describedby="product1"
-                                    className="bg-white/10 text-white hover:bg-white/20 focus-visible:outline-white mt-6 block rounded-md py-2 px-3 text-center text-sm font-semibold leading-6 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2">
+                                <NavLink
+                                    to="/checkout"
+                                    aria-describedby="product1"
+                                    className="bg-white/10 text-white hover:bg-white/20 focus-visible:outline-white mt-6 block rounded-md py-2 px-3 text-center text-sm font-semibold leading-6 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
+                                >
                                     Order Now
                                 </NavLink>
-
 
                                 <ul
                                     role="list"
@@ -187,8 +207,9 @@ const Landing = () => {
                                     </span>
                                     <span className="text-sm font-semibold leading-6 text-gray-300"></span>
                                 </p>
-                                <NavLink to="/checkout" aria-describedby="product1"
-
+                                <NavLink
+                                    to="/checkout"
+                                    aria-describedby="product1"
                                     className="bg-primary text-white shadow-sm hover:bg-red focus-visible:outline-indigo-500 mt-6 block rounded-md py-2 px-3 text-center text-sm font-semibold leading-6 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
                                 >
                                     Order Now
@@ -267,8 +288,11 @@ const Landing = () => {
                                     </span>
                                     <span className="text-sm font-semibold leading-6 text-gray-300"></span>
                                 </p>
-                                <NavLink to="/checkout" aria-describedby="product1"
-                                    className="bg-white/10 text-white hover:bg-white/20 focus-visible:outline-white mt-6 block rounded-md py-2 px-3 text-center text-sm font-semibold leading-6 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2">
+                                <NavLink
+                                    to="/checkout"
+                                    aria-describedby="product1"
+                                    className="bg-white/10 text-white hover:bg-white/20 focus-visible:outline-white mt-6 block rounded-md py-2 px-3 text-center text-sm font-semibold leading-6 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
+                                >
                                     Order Now
                                 </NavLink>
                                 {/* <a
