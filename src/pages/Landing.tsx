@@ -60,12 +60,12 @@ const Landing = () => {
                 </h1>
             </div>
 
-            <div className="w-[80%] lg:w-[65%] flex flex-col items-center my-9 z-0">
+            <div className="w-[80%] lg:w-[80%] flex flex-col items-center my-9 z-0">
                 <div className="slider-container w-full ">
                     <div className="slider w-full relative">
                         <div className="images w-full">
                             {brands.map((brand) => (
-                                <div className="w-[40%] lg:w-[20%] h-[100px]"><img src={brand} alt="" /></div>
+                                <div key={Math.random()} className="w-[40%] lg:w-[20%] h-[100px]"><img src={brand} alt="" /></div>
                             ))}
                         </div>
                     </div>
@@ -95,9 +95,9 @@ const Landing = () => {
                 </Carousel>
             </div>
 
-            <div>
+            <div className="lg:w-[90%]">
                 <div className="pt-5 bg-black" id="pr">
-                    <div className="mx-auto pb-20 mt-4 max-w-7xl px-6 lg:px-8">
+                    <div className="mx-auto pb-20 mt-4   px-6 lg:px-8">
                         <div className="mx-auto max-w-4xl text-center mb-16">
                             <p className="mt-2 text-3xl lg:text-4xl font-bold tracking-tight text-white sm:text-5xl">
                                 Stream, Watch, Enjoy
