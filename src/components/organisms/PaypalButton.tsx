@@ -10,10 +10,10 @@ type PropsType = {
 }
 
 const PaypalButton = (props:PropsType) => {
-    
+      const url = "https://iptvreact.onrender.com"; 
       const createOrder = async () => {
           // Order is created on the server and the order id is returned
-          const response = await fetch("http://localhost:8888/api/orders", {
+          const response = await fetch(`${url}/api/orders`, {
               method: "POST",
               headers: {
                   "Content-Type": "application/json",
@@ -34,7 +34,7 @@ const PaypalButton = (props:PropsType) => {
            // Order is captured on the server and the response is returned to the browser
            console.log(data);
            
-           const response = await fetch(`http://localhost:8888/api/orders/${data.orderID}/capture`, {
+           const response = await fetch(`${url}/api/orders/${data.orderID}/capture`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
