@@ -5,30 +5,30 @@ const Checkout =  () => {
     
     const {id} = useParams<'id'>();
     
-    let info ={price:"",subscription:""}
+    let info ={price:0,subscription:""}
 
     switch (id) {
         case '1':
             info = {
-                price : "$ 12.99",
+                price : 12.99,
                 subscription : "3 months"
             }
             break;
         case '2':
             info = {
-                price : "$ 36.99",
+                price : 36.99,
                 subscription : "6 months"
             }
             break;
         case '3':
             info = {
-                price :  "$ 80",
+                price :  80,
                 subscription : "12 months"
             }
             break;
         default:
             info = {
-                price : "$ 36.99",
+                price : 36.99,
                 subscription : "6 months"
             }
             break;
@@ -44,7 +44,7 @@ const Checkout =  () => {
                             <img className="m-2 h-24 w-28 rounded-md border object-cover object-center" src="https://play-lh.googleusercontent.com/eQuiBINHK6NhU7Gb5pZWYBd0-EEaQZO-UgRHnVHfy25SZd4FdioHzndYw9miii1zVQ" alt="" />
                             <div className="flex w-full flex-col px-4 py-4 text-black">
                                 <span className="font-semibold ">{info.subscription}</span>
-                                <p className="text-lg font-bold">{info.price}</p>
+                                <p className="text-lg font-bold">$ {info.price}</p>
                             </div>
                         </div>
                     </div>
@@ -71,7 +71,7 @@ const Checkout =  () => {
 
                         <div className="mt-6 flex border-t py-2 items-center justify-between">
                             <p className="text-sm font-medium text-white">Total</p>
-                            <p className="text-2xl font-semibold text-white">{info.price}</p>
+                            <p className="text-2xl font-semibold text-white">$ {info.price}</p>
                         </div>
                     </div>
                     <PaypalButton info = {info} />

@@ -51,7 +51,7 @@ const createOrder = async (product) => {
   // use the cart information passed from the front-end to calculate the purchase unit details
   console.log(
     "shopping cart information passed from the frontend createOrder() callback:",
-    product
+    product.cost
   );
 
   const accessToken = await generateAccessToken();

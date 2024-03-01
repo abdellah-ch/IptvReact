@@ -2,7 +2,7 @@ import {  OnApproveData } from "@paypal/paypal-js";
 import { PayPalButtons } from "@paypal/react-paypal-js";
 
 type Info = {
-  price: string;
+  price: number;
   subscription:string;
 } 
 type PropsType = {
