@@ -47,7 +47,7 @@ const Landing = () => {
                         of Channels and On-Demand Content
                     </p>
                     <Button className="font-bold purchaseButton w-[220px] lg:w-[270px] lg:h-[50px] h-[40px]">
-                        <NavLink className="w-full" to="/checkout">
+                        <NavLink className="w-full" to="/checkout/2">
                             PURCHASE
                         </NavLink>
                     </Button>
@@ -119,12 +119,12 @@ const Landing = () => {
                                 </p>
                                 <p className="mt-6 flex items-baseline gap-x-1">
                                     <span className="text-4xl font-bold tracking-tight text-white">
-                                        € 12.99
+                                        $ 12.99
                                     </span>
                                     <span className="text-sm font-semibold leading-6 text-gray-300"></span>
                                 </p>
                                 <NavLink
-                                    to="/checkout"
+                                    to="/checkout/1"
                                     aria-describedby="product1"
                                     className="bg-white/10 text-white hover:bg-white/20 focus-visible:outline-white mt-6 block rounded-md py-2 px-3 text-center text-sm font-semibold leading-6 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
                                 >
@@ -203,12 +203,12 @@ const Landing = () => {
                                 </p>
                                 <p className="mt-6 flex items-baseline gap-x-1">
                                     <span className="text-4xl font-bold tracking-tight text-white">
-                                        € 36.99
+                                        $ 36.99
                                     </span>
                                     <span className="text-sm font-semibold leading-6 text-gray-300"></span>
                                 </p>
                                 <NavLink
-                                    to="/checkout"
+                                    to="/checkout/2"
                                     aria-describedby="product1"
                                     className="bg-primary text-white shadow-sm hover:bg-red focus-visible:outline-indigo-500 mt-6 block rounded-md py-2 px-3 text-center text-sm font-semibold leading-6 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
                                 >
@@ -284,12 +284,12 @@ const Landing = () => {
                                 </p>
                                 <p className="mt-6 flex items-baseline gap-x-1">
                                     <span className="text-4xl font-bold tracking-tight text-white">
-                                        € 80
+                                        $ 80
                                     </span>
                                     <span className="text-sm font-semibold leading-6 text-gray-300"></span>
                                 </p>
                                 <NavLink
-                                    to="/checkout"
+                                    to="/checkout/3"
                                     aria-describedby="product1"
                                     className="bg-white/10 text-white hover:bg-white/20 focus-visible:outline-white mt-6 block rounded-md py-2 px-3 text-center text-sm font-semibold leading-6 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
                                 >

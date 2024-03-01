@@ -1,6 +1,38 @@
-import { PayPalButtons } from "@paypal/react-paypal-js"
+import PaypalButton from "@/components/organisms/PaypalButton"
+import { useParams } from "react-router-dom";
 
-const Checkout = () => {
+const Checkout =  () => {
+    
+    const {id} = useParams<'id'>();
+    
+    let info ={price:"",subscription:""}
+
+    switch (id) {
+        case '1':
+            info = {
+                price : "$ 12.99",
+                subscription : "3 months"
+            }
+            break;
+        case '2':
+            info = {
+                price : "$ 36.99",
+                subscription : "6 months"
+            }
+            break;
+        case '3':
+            info = {
+                price :  "$ 80",
+                subscription : "12 months"
+            }
+            break;
+        default:
+            info = {
+                price : "$ 36.99",
+                subscription : "6 months"
+            }
+            break;
+    }
     return (
         <div className="min-h-[84vh] flex justify-center items-center text-black">
 
@@ -11,8 +43,8 @@ const Checkout = () => {
                         <div className="flex flex-col rounded-lg bg-white sm:flex-row">
                             <img className="m-2 h-24 w-28 rounded-md border object-cover object-center" src="https://play-lh.googleusercontent.com/eQuiBINHK6NhU7Gb5pZWYBd0-EEaQZO-UgRHnVHfy25SZd4FdioHzndYw9miii1zVQ" alt="" />
                             <div className="flex w-full flex-col px-4 py-4 text-black">
-                                <span className="font-semibold ">6 Months</span>
-                                <p className="text-lg font-bold">$ 36.99</p>
+                                <span className="font-semibold ">{info.subscription}</span>
+                                <p className="text-lg font-bold">{info.price}</p>
                             </div>
                         </div>
                     </div>
@@ -39,15 +71,14 @@ const Checkout = () => {
 
                         <div className="mt-6 flex border-t py-2 items-center justify-between">
                             <p className="text-sm font-medium text-white">Total</p>
-                            <p className="text-2xl font-semibold text-white">$ 36.99</p>
+                            <p className="text-2xl font-semibold text-white">{info.price}</p>
                         </div>
                     </div>
-                    <PayPalButtons className="w-full" />
+                    <PaypalButton info = {info} />
                     
                 </div>
             </div>
         </div>
-
     )
 }
 

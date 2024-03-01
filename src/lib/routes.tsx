@@ -22,7 +22,7 @@ const routes: RouteObject[] = [
                 element: <Tutorial />,
             },
             {
-                path: "/checkout",
+                path: "/checkout/:id",
                 element: <Checkout />
             }
         ]
